@@ -1,0 +1,24 @@
+obj/Debug/
+obj/
+**/Debug
+bin/
+
+# Compiled source
+*.dll
+*.exe
+*.obj
+*.pdb
+*.bin
+*.o
+*.lib
+
+# Visual Studio specific
+.vs/
+*.user
+*.suo
+*.cache
+*.ilk
+*.ncb
+*.sdf
+*.opensdf
+*.log
