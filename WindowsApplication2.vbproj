@@ -78,10 +78,58 @@
     <Compile Include="frmArbitro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCertificadoM.Designer.vb">
+      <DependentUpon>frmCertificadoM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCertificadoM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClub.Designer.vb">
+      <DependentUpon>frmClub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContrato.Designer.vb">
+      <DependentUpon>frmContrato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDelegadoP.Designer.vb">
+      <DependentUpon>frmDelegadoP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDelegadoP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnfrentamiento.Designer.vb">
+      <DependentUpon>frmEnfrentamiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnfrentamiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadio.Designer.vb">
+      <DependentUpon>frmEstadio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFichaP.Designer.vb">
+      <DependentUpon>frmFichaP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFichaP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmJugador.Designer.vb">
       <DependentUpon>frmJugador.vb</DependentUpon>
     </Compile>
     <Compile Include="frmJugador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
@@ -90,9 +138,24 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRepresentante.Designer.vb">
+      <DependentUpon>frmRepresentante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRepresentante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicitud.Designer.vb">
+      <DependentUpon>frmSolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LIGA_01_DBDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>LIGA_01_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LIGA_01_DBDataSet.vb">
       <DependentUpon>LIGA_01_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LIGA_01_DBDataSet1.Designer.vb">
@@ -120,11 +183,41 @@
     <EmbeddedResource Include="frmArbitro.resx">
       <DependentUpon>frmArbitro.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCertificadoM.resx">
+      <DependentUpon>frmCertificadoM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClub.resx">
+      <DependentUpon>frmClub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContrato.resx">
+      <DependentUpon>frmContrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDelegadoP.resx">
+      <DependentUpon>frmDelegadoP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnfrentamiento.resx">
+      <DependentUpon>frmEnfrentamiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadio.resx">
+      <DependentUpon>frmEstadio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFichaP.resx">
+      <DependentUpon>frmFichaP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJugador.resx">
       <DependentUpon>frmJugador.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRepresentante.resx">
+      <DependentUpon>frmRepresentante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitud.resx">
+      <DependentUpon>frmSolicitud.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

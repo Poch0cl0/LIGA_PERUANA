@@ -107,6 +107,8 @@ Partial Public Class LIGA_01_DBDataSet
     
     Private tableREVISAR_REPORTE_ADMISION As REVISAR_REPORTE_ADMISIONDataTable
     
+    Private tablefn_jugadores_por_nacionalidad As fn_jugadores_por_nacionalidadDataTable
+    
     Private relationR_127 As Global.System.Data.DataRelation
     
     Private relationR_68 As Global.System.Data.DataRelation
@@ -348,6 +350,9 @@ Partial Public Class LIGA_01_DBDataSet
             End If
             If (Not (ds.Tables("REVISAR_REPORTE_ADMISION")) Is Nothing) Then
                 MyBase.Tables.Add(New REVISAR_REPORTE_ADMISIONDataTable(ds.Tables("REVISAR_REPORTE_ADMISION")))
+            End If
+            If (Not (ds.Tables("fn_jugadores_por_nacionalidad")) Is Nothing) Then
+                MyBase.Tables.Add(New fn_jugadores_por_nacionalidadDataTable(ds.Tables("fn_jugadores_por_nacionalidad")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -778,6 +783,16 @@ Partial Public Class LIGA_01_DBDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property fn_jugadores_por_nacionalidad() As fn_jugadores_por_nacionalidadDataTable
+        Get
+            Return Me.tablefn_jugadores_por_nacionalidad
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -965,6 +980,9 @@ Partial Public Class LIGA_01_DBDataSet
             End If
             If (Not (ds.Tables("REVISAR_REPORTE_ADMISION")) Is Nothing) Then
                 MyBase.Tables.Add(New REVISAR_REPORTE_ADMISIONDataTable(ds.Tables("REVISAR_REPORTE_ADMISION")))
+            End If
+            If (Not (ds.Tables("fn_jugadores_por_nacionalidad")) Is Nothing) Then
+                MyBase.Tables.Add(New fn_jugadores_por_nacionalidadDataTable(ds.Tables("fn_jugadores_por_nacionalidad")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -1244,6 +1262,12 @@ Partial Public Class LIGA_01_DBDataSet
                 Me.tableREVISAR_REPORTE_ADMISION.InitVars
             End If
         End If
+        Me.tablefn_jugadores_por_nacionalidad = CType(MyBase.Tables("fn_jugadores_por_nacionalidad"),fn_jugadores_por_nacionalidadDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablefn_jugadores_por_nacionalidad) Is Nothing) Then
+                Me.tablefn_jugadores_por_nacionalidad.InitVars
+            End If
+        End If
         Me.relationR_127 = Me.Relations("R_127")
         Me.relationR_68 = Me.Relations("R_68")
         Me.relationR_95 = Me.Relations("R_95")
@@ -1381,6 +1405,8 @@ Partial Public Class LIGA_01_DBDataSet
         MyBase.Tables.Add(Me.tableREVISAR_FICHA_PROGRAMACION)
         Me.tableREVISAR_REPORTE_ADMISION = New REVISAR_REPORTE_ADMISIONDataTable()
         MyBase.Tables.Add(Me.tableREVISAR_REPORTE_ADMISION)
+        Me.tablefn_jugadores_por_nacionalidad = New fn_jugadores_por_nacionalidadDataTable()
+        MyBase.Tables.Add(Me.tablefn_jugadores_por_nacionalidad)
         Me.relationR_127 = New Global.System.Data.DataRelation("R_127", New Global.System.Data.DataColumn() {Me.tableIDENTIFICACION.CodigoIdentificacionColumn, Me.tableIDENTIFICACION.IdTipoIdenticacionColumn}, New Global.System.Data.DataColumn() {Me.tableARBITRO.CodigoIdentificacionColumn, Me.tableARBITRO.IdTipoIdenticacionColumn}, false)
         Me.Relations.Add(Me.relationR_127)
         Me.relationR_68 = New Global.System.Data.DataRelation("R_68", New Global.System.Data.DataColumn() {Me.tableTIPO_ARBITRO.IdTipoArbitroColumn}, New Global.System.Data.DataColumn() {Me.tableARBITRO.IdTipoArbitroColumn}, false)
@@ -1721,6 +1747,12 @@ Partial Public Class LIGA_01_DBDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializefn_jugadores_por_nacionalidad() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub SchemaChanged(ByVal sender As Object, ByVal e As Global.System.ComponentModel.CollectionChangeEventArgs)
         If (e.Action = Global.System.ComponentModel.CollectionChangeAction.Remove) Then
             Me.InitVars
@@ -1899,6 +1931,9 @@ Partial Public Class LIGA_01_DBDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub REVISAR_REPORTE_ADMISIONRowChangeEventHandler(ByVal sender As Object, ByVal e As REVISAR_REPORTE_ADMISIONRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub fn_jugadores_por_nacionalidadRowChangeEventHandler(ByVal sender As Object, ByVal e As fn_jugadores_por_nacionalidadRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -3846,8 +3881,6 @@ Partial Public Class LIGA_01_DBDataSet
         
         Private columnFechaEnfrentamiento As Global.System.Data.DataColumn
         
-        Private columnHoraEnfrentamiento As Global.System.Data.DataColumn
-        
         Private columnIdEquipoArbitraje As Global.System.Data.DataColumn
         
         Private columnIdEstadio As Global.System.Data.DataColumn
@@ -3906,14 +3939,6 @@ Partial Public Class LIGA_01_DBDataSet
         Public ReadOnly Property FechaEnfrentamientoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnFechaEnfrentamiento
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property HoraEnfrentamientoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnHoraEnfrentamiento
             End Get
         End Property
         
@@ -4026,14 +4051,14 @@ Partial Public Class LIGA_01_DBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDETALLE_ENFRENTAMIENTORow(ByVal FechaEnfrentamiento As Date, ByVal HoraEnfrentamiento() As Byte, ByVal parentEQUIPO_ARBITRAJERowByR_67 As EQUIPO_ARBITRAJERow, ByVal parentESTADIORowByR_81 As ESTADIORow, ByVal CodigoIdentificacion As String, ByVal IdTipoIdenticacion As Integer, ByVal IdClubLocal As Integer, ByVal IdClubVisitante As Integer, ByVal IdEtapa As Integer, ByVal IdTorneo As Integer, ByVal IdFecha As Integer) As DETALLE_ENFRENTAMIENTORow
+        Public Overloads Function AddDETALLE_ENFRENTAMIENTORow(ByVal FechaEnfrentamiento As Date, ByVal parentEQUIPO_ARBITRAJERowByR_67 As EQUIPO_ARBITRAJERow, ByVal parentESTADIORowByR_81 As ESTADIORow, ByVal CodigoIdentificacion As String, ByVal IdTipoIdenticacion As Integer, ByVal IdClubLocal As Integer, ByVal IdClubVisitante As Integer, ByVal IdEtapa As Integer, ByVal IdTorneo As Integer, ByVal IdFecha As Integer) As DETALLE_ENFRENTAMIENTORow
             Dim rowDETALLE_ENFRENTAMIENTORow As DETALLE_ENFRENTAMIENTORow = CType(Me.NewRow,DETALLE_ENFRENTAMIENTORow)
-            Dim columnValuesArray() As Object = New Object() {FechaEnfrentamiento, HoraEnfrentamiento, Nothing, Nothing, CodigoIdentificacion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFecha}
+            Dim columnValuesArray() As Object = New Object() {FechaEnfrentamiento, Nothing, Nothing, CodigoIdentificacion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFecha}
             If (Not (parentEQUIPO_ARBITRAJERowByR_67) Is Nothing) Then
-                columnValuesArray(2) = parentEQUIPO_ARBITRAJERowByR_67(0)
+                columnValuesArray(1) = parentEQUIPO_ARBITRAJERowByR_67(0)
             End If
             If (Not (parentESTADIORowByR_81) Is Nothing) Then
-                columnValuesArray(3) = parentESTADIORowByR_81(0)
+                columnValuesArray(2) = parentESTADIORowByR_81(0)
             End If
             rowDETALLE_ENFRENTAMIENTORow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDETALLE_ENFRENTAMIENTORow)
@@ -4064,7 +4089,6 @@ Partial Public Class LIGA_01_DBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnFechaEnfrentamiento = MyBase.Columns("FechaEnfrentamiento")
-            Me.columnHoraEnfrentamiento = MyBase.Columns("HoraEnfrentamiento")
             Me.columnIdEquipoArbitraje = MyBase.Columns("IdEquipoArbitraje")
             Me.columnIdEstadio = MyBase.Columns("IdEstadio")
             Me.columnCodigoIdentificacion = MyBase.Columns("CodigoIdentificacion")
@@ -4081,8 +4105,6 @@ Partial Public Class LIGA_01_DBDataSet
         Private Sub InitClass()
             Me.columnFechaEnfrentamiento = New Global.System.Data.DataColumn("FechaEnfrentamiento", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechaEnfrentamiento)
-            Me.columnHoraEnfrentamiento = New Global.System.Data.DataColumn("HoraEnfrentamiento", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHoraEnfrentamiento)
             Me.columnIdEquipoArbitraje = New Global.System.Data.DataColumn("IdEquipoArbitraje", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIdEquipoArbitraje)
             Me.columnIdEstadio = New Global.System.Data.DataColumn("IdEstadio", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -4102,7 +4124,6 @@ Partial Public Class LIGA_01_DBDataSet
             Me.columnIdFecha = New Global.System.Data.DataColumn("IdFecha", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIdFecha)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdClubLocal, Me.columnIdClubVisitante, Me.columnIdEtapa, Me.columnIdTorneo, Me.columnIdFecha}, true))
-            Me.columnHoraEnfrentamiento.ReadOnly = true
             Me.columnCodigoIdentificacion.MaxLength = 20
             Me.columnIdClubLocal.AllowDBNull = false
             Me.columnIdClubVisitante.AllowDBNull = false
@@ -14457,6 +14478,317 @@ Partial Public Class LIGA_01_DBDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class fn_jugadores_por_nacionalidadDataTable
+        Inherits Global.System.Data.TypedTableBase(Of fn_jugadores_por_nacionalidadRow)
+        
+        Private columnNombreJugador As Global.System.Data.DataColumn
+        
+        Private columnApellidoJugador As Global.System.Data.DataColumn
+        
+        Private columnFechaNacimiento As Global.System.Data.DataColumn
+        
+        Private columnCodigoIdentificacion As Global.System.Data.DataColumn
+        
+        Private columnNacionalidadJugador As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "fn_jugadores_por_nacionalidad"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NombreJugadorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreJugador
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ApellidoJugadorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnApellidoJugador
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FechaNacimientoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFechaNacimiento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CodigoIdentificacionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCodigoIdentificacion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NacionalidadJugadorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNacionalidadJugador
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As fn_jugadores_por_nacionalidadRow
+            Get
+                Return CType(Me.Rows(index),fn_jugadores_por_nacionalidadRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event fn_jugadores_por_nacionalidadRowChanging As fn_jugadores_por_nacionalidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event fn_jugadores_por_nacionalidadRowChanged As fn_jugadores_por_nacionalidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event fn_jugadores_por_nacionalidadRowDeleting As fn_jugadores_por_nacionalidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event fn_jugadores_por_nacionalidadRowDeleted As fn_jugadores_por_nacionalidadRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub Addfn_jugadores_por_nacionalidadRow(ByVal row As fn_jugadores_por_nacionalidadRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function Addfn_jugadores_por_nacionalidadRow(ByVal NombreJugador As String, ByVal ApellidoJugador As String, ByVal FechaNacimiento As Date, ByVal CodigoIdentificacion As String, ByVal NacionalidadJugador As String) As fn_jugadores_por_nacionalidadRow
+            Dim rowfn_jugadores_por_nacionalidadRow As fn_jugadores_por_nacionalidadRow = CType(Me.NewRow,fn_jugadores_por_nacionalidadRow)
+            Dim columnValuesArray() As Object = New Object() {NombreJugador, ApellidoJugador, FechaNacimiento, CodigoIdentificacion, NacionalidadJugador}
+            rowfn_jugadores_por_nacionalidadRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowfn_jugadores_por_nacionalidadRow)
+            Return rowfn_jugadores_por_nacionalidadRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As fn_jugadores_por_nacionalidadDataTable = CType(MyBase.Clone,fn_jugadores_por_nacionalidadDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New fn_jugadores_por_nacionalidadDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnNombreJugador = MyBase.Columns("NombreJugador")
+            Me.columnApellidoJugador = MyBase.Columns("ApellidoJugador")
+            Me.columnFechaNacimiento = MyBase.Columns("FechaNacimiento")
+            Me.columnCodigoIdentificacion = MyBase.Columns("CodigoIdentificacion")
+            Me.columnNacionalidadJugador = MyBase.Columns("NacionalidadJugador")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnNombreJugador = New Global.System.Data.DataColumn("NombreJugador", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreJugador)
+            Me.columnApellidoJugador = New Global.System.Data.DataColumn("ApellidoJugador", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApellidoJugador)
+            Me.columnFechaNacimiento = New Global.System.Data.DataColumn("FechaNacimiento", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFechaNacimiento)
+            Me.columnCodigoIdentificacion = New Global.System.Data.DataColumn("CodigoIdentificacion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigoIdentificacion)
+            Me.columnNacionalidadJugador = New Global.System.Data.DataColumn("NacionalidadJugador", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNacionalidadJugador)
+            Me.columnNombreJugador.AllowDBNull = false
+            Me.columnNombreJugador.MaxLength = 10
+            Me.columnApellidoJugador.AllowDBNull = false
+            Me.columnApellidoJugador.MaxLength = 20
+            Me.columnCodigoIdentificacion.AllowDBNull = false
+            Me.columnCodigoIdentificacion.MaxLength = 20
+            Me.columnNacionalidadJugador.MaxLength = 15
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Newfn_jugadores_por_nacionalidadRow() As fn_jugadores_por_nacionalidadRow
+            Return CType(Me.NewRow,fn_jugadores_por_nacionalidadRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New fn_jugadores_por_nacionalidadRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(fn_jugadores_por_nacionalidadRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.fn_jugadores_por_nacionalidadRowChangedEvent) Is Nothing) Then
+                RaiseEvent fn_jugadores_por_nacionalidadRowChanged(Me, New fn_jugadores_por_nacionalidadRowChangeEvent(CType(e.Row,fn_jugadores_por_nacionalidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.fn_jugadores_por_nacionalidadRowChangingEvent) Is Nothing) Then
+                RaiseEvent fn_jugadores_por_nacionalidadRowChanging(Me, New fn_jugadores_por_nacionalidadRowChangeEvent(CType(e.Row,fn_jugadores_por_nacionalidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.fn_jugadores_por_nacionalidadRowDeletedEvent) Is Nothing) Then
+                RaiseEvent fn_jugadores_por_nacionalidadRowDeleted(Me, New fn_jugadores_por_nacionalidadRowChangeEvent(CType(e.Row,fn_jugadores_por_nacionalidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.fn_jugadores_por_nacionalidadRowDeletingEvent) Is Nothing) Then
+                RaiseEvent fn_jugadores_por_nacionalidadRowDeleting(Me, New fn_jugadores_por_nacionalidadRowChangeEvent(CType(e.Row,fn_jugadores_por_nacionalidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Removefn_jugadores_por_nacionalidadRow(ByVal row As fn_jugadores_por_nacionalidadRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As LIGA_01_DBDataSet = New LIGA_01_DBDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "fn_jugadores_por_nacionalidadDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class ARBITRORow
@@ -15286,22 +15618,6 @@ Partial Public Class LIGA_01_DBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property HoraEnfrentamiento() As Byte()
-            Get
-                Try 
-                    Return CType(Me(Me.tableDETALLE_ENFRENTAMIENTO.HoraEnfrentamientoColumn),Byte())
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'HoraEnfrentamiento' de la tabla 'DETALLE_ENFRENTAMIENTO' "& _ 
-                            "es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDETALLE_ENFRENTAMIENTO.HoraEnfrentamientoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property IdEquipoArbitraje() As Integer
             Get
                 Try 
@@ -15484,18 +15800,6 @@ Partial Public Class LIGA_01_DBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetFechaEnfrentamientoNull()
             Me(Me.tableDETALLE_ENFRENTAMIENTO.FechaEnfrentamientoColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsHoraEnfrentamientoNull() As Boolean
-            Return Me.IsNull(Me.tableDETALLE_ENFRENTAMIENTO.HoraEnfrentamientoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetHoraEnfrentamientoNull()
-            Me(Me.tableDETALLE_ENFRENTAMIENTO.HoraEnfrentamientoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19085,6 +19389,111 @@ Partial Public Class LIGA_01_DBDataSet
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class fn_jugadores_por_nacionalidadRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablefn_jugadores_por_nacionalidad As fn_jugadores_por_nacionalidadDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablefn_jugadores_por_nacionalidad = CType(Me.Table,fn_jugadores_por_nacionalidadDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NombreJugador() As String
+            Get
+                Return CType(Me(Me.tablefn_jugadores_por_nacionalidad.NombreJugadorColumn),String)
+            End Get
+            Set
+                Me(Me.tablefn_jugadores_por_nacionalidad.NombreJugadorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ApellidoJugador() As String
+            Get
+                Return CType(Me(Me.tablefn_jugadores_por_nacionalidad.ApellidoJugadorColumn),String)
+            End Get
+            Set
+                Me(Me.tablefn_jugadores_por_nacionalidad.ApellidoJugadorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FechaNacimiento() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablefn_jugadores_por_nacionalidad.FechaNacimientoColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FechaNacimiento' de la tabla 'fn_jugadores_por_nacionalid"& _ 
+                            "ad' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablefn_jugadores_por_nacionalidad.FechaNacimientoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CodigoIdentificacion() As String
+            Get
+                Return CType(Me(Me.tablefn_jugadores_por_nacionalidad.CodigoIdentificacionColumn),String)
+            End Get
+            Set
+                Me(Me.tablefn_jugadores_por_nacionalidad.CodigoIdentificacionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NacionalidadJugador() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablefn_jugadores_por_nacionalidad.NacionalidadJugadorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NacionalidadJugador' de la tabla 'fn_jugadores_por_nacion"& _ 
+                            "alidad' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablefn_jugadores_por_nacionalidad.NacionalidadJugadorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFechaNacimientoNull() As Boolean
+            Return Me.IsNull(Me.tablefn_jugadores_por_nacionalidad.FechaNacimientoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFechaNacimientoNull()
+            Me(Me.tablefn_jugadores_por_nacionalidad.FechaNacimientoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNacionalidadJugadorNull() As Boolean
+            Return Me.IsNull(Me.tablefn_jugadores_por_nacionalidad.NacionalidadJugadorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNacionalidadJugadorNull()
+            Me(Me.tablefn_jugadores_por_nacionalidad.NacionalidadJugadorColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -20546,6 +20955,42 @@ Partial Public Class LIGA_01_DBDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As REVISAR_REPORTE_ADMISIONRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class fn_jugadores_por_nacionalidadRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As fn_jugadores_por_nacionalidadRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As fn_jugadores_por_nacionalidadRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As fn_jugadores_por_nacionalidadRow
             Get
                 Return Me.eventRow
             End Get
@@ -23095,7 +23540,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "DETALLE_ENFRENTAMIENTO"
             tableMapping.ColumnMappings.Add("FechaEnfrentamiento", "FechaEnfrentamiento")
-            tableMapping.ColumnMappings.Add("HoraEnfrentamiento", "HoraEnfrentamiento")
             tableMapping.ColumnMappings.Add("IdEquipoArbitraje", "IdEquipoArbitraje")
             tableMapping.ColumnMappings.Add("IdEstadio", "IdEstadio")
             tableMapping.ColumnMappings.Add("CodigoIdentificacion", "CodigoIdentificacion")
@@ -23108,14 +23552,28 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[DETALLE_ENFRENTAMIENTO] WHERE (((@IsNull_HoraEnfrentamiento = "& _ 
-                "1 AND [HoraEnfrentamiento] IS NULL) OR ([HoraEnfrentamiento] = @Original_HoraEnf"& _ 
-                "rentamiento)) AND ([IdClubLocal] = @Original_IdClubLocal) AND ([IdClubVisitante]"& _ 
-                " = @Original_IdClubVisitante) AND ([IdEtapa] = @Original_IdEtapa) AND ([IdTorneo"& _ 
-                "] = @Original_IdTorneo) AND ([IdFecha] = @Original_IdFecha))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DETALLE_ENFRENTAMIENTO] WHERE (((@IsNull_FechaEnfrentamiento = 1 AND"& _ 
+                " [FechaEnfrentamiento] IS NULL) OR ([FechaEnfrentamiento] = @Original_FechaEnfre"& _ 
+                "ntamiento)) AND ((@IsNull_IdEquipoArbitraje = 1 AND [IdEquipoArbitraje] IS NULL)"& _ 
+                " OR ([IdEquipoArbitraje] = @Original_IdEquipoArbitraje)) AND ((@IsNull_IdEstadio"& _ 
+                " = 1 AND [IdEstadio] IS NULL) OR ([IdEstadio] = @Original_IdEstadio)) AND ((@IsN"& _ 
+                "ull_CodigoIdentificacion = 1 AND [CodigoIdentificacion] IS NULL) OR ([CodigoIden"& _ 
+                "tificacion] = @Original_CodigoIdentificacion)) AND ((@IsNull_IdTipoIdenticacion "& _ 
+                "= 1 AND [IdTipoIdenticacion] IS NULL) OR ([IdTipoIdenticacion] = @Original_IdTip"& _ 
+                "oIdenticacion)) AND ([IdClubLocal] = @Original_IdClubLocal) AND ([IdClubVisitant"& _ 
+                "e] = @Original_IdClubVisitante) AND ([IdEtapa] = @Original_IdEtapa) AND ([IdTorn"& _ 
+                "eo] = @Original_IdTorneo) AND ([IdFecha] = @Original_IdFecha))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraEnfrentamiento", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEnfrentamiento", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraEnfrentamiento", Global.System.Data.SqlDbType.Timestamp, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEnfrentamiento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaEnfrentamiento", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaEnfrentamiento", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEstadio", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstadio", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEstadio", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstadio", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CodigoIdentificacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodigoIdentificacion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdTipoIdenticacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdTipoIdenticacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdTipoIdenticacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdTipoIdenticacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdClubLocal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdClubLocal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdClubVisitante", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdClubVisitante", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEtapa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEtapa", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -23123,16 +23581,15 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdFecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdFecha", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DETALLE_ENFRENTAMIENTO] ([FechaEnfrentamiento], [IdEquipoArbit"& _ 
-                "raje], [IdEstadio], [CodigoIdentificacion], [IdTipoIdenticacion], [IdClubLocal],"& _ 
-                " [IdClubVisitante], [IdEtapa], [IdTorneo], [IdFecha]) VALUES (@FechaEnfrentamien"& _ 
-                "to, @IdEquipoArbitraje, @IdEstadio, @CodigoIdentificacion, @IdTipoIdenticacion, "& _ 
-                "@IdClubLocal, @IdClubVisitante, @IdEtapa, @IdTorneo, @IdFecha);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT FechaEnf"& _ 
-                "rentamiento, HoraEnfrentamiento, IdEquipoArbitraje, IdEstadio, CodigoIdentificac"& _ 
-                "ion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFech"& _ 
-                "a FROM DETALLE_ENFRENTAMIENTO WHERE (IdClubLocal = @IdClubLocal) AND (IdClubVisi"& _ 
-                "tante = @IdClubVisitante) AND (IdEtapa = @IdEtapa) AND (IdFecha = @IdFecha) AND "& _ 
-                "(IdTorneo = @IdTorneo)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [DETALLE_ENFRENTAMIENTO] ([FechaEnfrentamiento], [IdEquipoArbitraje],"& _ 
+                " [IdEstadio], [CodigoIdentificacion], [IdTipoIdenticacion], [IdClubLocal], [IdCl"& _ 
+                "ubVisitante], [IdEtapa], [IdTorneo], [IdFecha]) VALUES (@FechaEnfrentamiento, @I"& _ 
+                "dEquipoArbitraje, @IdEstadio, @CodigoIdentificacion, @IdTipoIdenticacion, @IdClu"& _ 
+                "bLocal, @IdClubVisitante, @IdEtapa, @IdTorneo, @IdFecha);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT FechaEnfrentam"& _ 
+                "iento, IdEquipoArbitraje, IdEstadio, CodigoIdentificacion, IdTipoIdenticacion, I"& _ 
+                "dClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFecha FROM DETALLE_ENFRENTAMIE"& _ 
+                "NTO WHERE (IdClubLocal = @IdClubLocal) AND (IdClubVisitante = @IdClubVisitante) "& _ 
+                "AND (IdEtapa = @IdEtapa) AND (IdFecha = @IdFecha) AND (IdTorneo = @IdTorneo)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaEnfrentamiento", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -23146,20 +23603,26 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdFecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdFecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DETALLE_ENFRENTAMIENTO] SET [FechaEnfrentamiento] = @FechaEnfrentam"& _ 
-                "iento, [IdEquipoArbitraje] = @IdEquipoArbitraje, [IdEstadio] = @IdEstadio, [Codi"& _ 
-                "goIdentificacion] = @CodigoIdentificacion, [IdTipoIdenticacion] = @IdTipoIdentic"& _ 
-                "acion, [IdClubLocal] = @IdClubLocal, [IdClubVisitante] = @IdClubVisitante, [IdEt"& _ 
-                "apa] = @IdEtapa, [IdTorneo] = @IdTorneo, [IdFecha] = @IdFecha WHERE (((@IsNull_H"& _ 
-                "oraEnfrentamiento = 1 AND [HoraEnfrentamiento] IS NULL) OR ([HoraEnfrentamiento]"& _ 
-                " = @Original_HoraEnfrentamiento)) AND ([IdClubLocal] = @Original_IdClubLocal) AN"& _ 
-                "D ([IdClubVisitante] = @Original_IdClubVisitante) AND ([IdEtapa] = @Original_IdE"& _ 
-                "tapa) AND ([IdTorneo] = @Original_IdTorneo) AND ([IdFecha] = @Original_IdFecha))"& _ 
-                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT FechaEnfrentamiento, HoraEnfrentamiento, IdEquipoArbitraje, IdEstadio,"& _ 
-                " CodigoIdentificacion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa"& _ 
-                ", IdTorneo, IdFecha FROM DETALLE_ENFRENTAMIENTO WHERE (IdClubLocal = @IdClubLoca"& _ 
-                "l) AND (IdClubVisitante = @IdClubVisitante) AND (IdEtapa = @IdEtapa) AND (IdFech"& _ 
-                "a = @IdFecha) AND (IdTorneo = @IdTorneo)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [DETALLE_ENFRENTAMIENTO] SET [FechaEnfrentamiento] = @FechaEnfrentamiento,"& _ 
+                " [IdEquipoArbitraje] = @IdEquipoArbitraje, [IdEstadio] = @IdEstadio, [CodigoIden"& _ 
+                "tificacion] = @CodigoIdentificacion, [IdTipoIdenticacion] = @IdTipoIdenticacion,"& _ 
+                " [IdClubLocal] = @IdClubLocal, [IdClubVisitante] = @IdClubVisitante, [IdEtapa] ="& _ 
+                " @IdEtapa, [IdTorneo] = @IdTorneo, [IdFecha] = @IdFecha WHERE (((@IsNull_FechaEn"& _ 
+                "frentamiento = 1 AND [FechaEnfrentamiento] IS NULL) OR ([FechaEnfrentamiento] = "& _ 
+                "@Original_FechaEnfrentamiento)) AND ((@IsNull_IdEquipoArbitraje = 1 AND [IdEquip"& _ 
+                "oArbitraje] IS NULL) OR ([IdEquipoArbitraje] = @Original_IdEquipoArbitraje)) AND"& _ 
+                " ((@IsNull_IdEstadio = 1 AND [IdEstadio] IS NULL) OR ([IdEstadio] = @Original_Id"& _ 
+                "Estadio)) AND ((@IsNull_CodigoIdentificacion = 1 AND [CodigoIdentificacion] IS N"& _ 
+                "ULL) OR ([CodigoIdentificacion] = @Original_CodigoIdentificacion)) AND ((@IsNull"& _ 
+                "_IdTipoIdenticacion = 1 AND [IdTipoIdenticacion] IS NULL) OR ([IdTipoIdenticacio"& _ 
+                "n] = @Original_IdTipoIdenticacion)) AND ([IdClubLocal] = @Original_IdClubLocal) "& _ 
+                "AND ([IdClubVisitante] = @Original_IdClubVisitante) AND ([IdEtapa] = @Original_I"& _ 
+                "dEtapa) AND ([IdTorneo] = @Original_IdTorneo) AND ([IdFecha] = @Original_IdFecha"& _ 
+                "));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT FechaEnfrentamiento, IdEquipoArbitraje, IdEstadio, CodigoIdentificac"& _ 
+                "ion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFech"& _ 
+                "a FROM DETALLE_ENFRENTAMIENTO WHERE (IdClubLocal = @IdClubLocal) AND (IdClubVisi"& _ 
+                "tante = @IdClubVisitante) AND (IdEtapa = @IdEtapa) AND (IdFecha = @IdFecha) AND "& _ 
+                "(IdTorneo = @IdTorneo)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaEnfrentamiento", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -23171,8 +23634,16 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEtapa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEtapa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdTorneo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdTorneo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdFecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdFecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraEnfrentamiento", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEnfrentamiento", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraEnfrentamiento", Global.System.Data.SqlDbType.Timestamp, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEnfrentamiento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaEnfrentamiento", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaEnfrentamiento", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaEnfrentamiento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEquipoArbitraje", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEquipoArbitraje", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEstadio", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstadio", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEstadio", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstadio", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CodigoIdentificacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodigoIdentificacion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdTipoIdenticacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdTipoIdenticacion", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdTipoIdenticacion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdTipoIdenticacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdClubLocal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdClubLocal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdClubVisitante", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdClubVisitante", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEtapa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEtapa", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -23193,9 +23664,9 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT FechaEnfrentamiento, HoraEnfrentamiento, IdEquipoArbitraje, IdEstadio, Cod"& _ 
-                "igoIdentificacion, IdTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, Id"& _ 
-                "Torneo, IdFecha FROM dbo.DETALLE_ENFRENTAMIENTO"
+            Me._commandCollection(0).CommandText = "SELECT FechaEnfrentamiento, IdEquipoArbitraje, IdEstadio, CodigoIdentificacion, I"& _ 
+                "dTipoIdenticacion, IdClubLocal, IdClubVisitante, IdEtapa, IdTorneo, IdFecha FROM"& _ 
+                " DETALLE_ENFRENTAMIENTO"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -23255,19 +23726,47 @@ Namespace LIGA_01_DBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_HoraEnfrentamiento() As Byte, ByVal Original_IdClubLocal As Integer, ByVal Original_IdClubVisitante As Integer, ByVal Original_IdEtapa As Integer, ByVal Original_IdTorneo As Integer, ByVal Original_IdFecha As Integer) As Integer
-            If (Original_HoraEnfrentamiento Is Nothing) Then
+        Public Overloads Overridable Function Delete(ByVal Original_FechaEnfrentamiento As Global.System.Nullable(Of Date), ByVal Original_IdEquipoArbitraje As Global.System.Nullable(Of Integer), ByVal Original_IdEstadio As Global.System.Nullable(Of Integer), ByVal Original_CodigoIdentificacion As String, ByVal Original_IdTipoIdenticacion As Global.System.Nullable(Of Integer), ByVal Original_IdClubLocal As Integer, ByVal Original_IdClubVisitante As Integer, ByVal Original_IdEtapa As Integer, ByVal Original_IdTorneo As Integer, ByVal Original_IdFecha As Integer) As Integer
+            If (Original_FechaEnfrentamiento.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_FechaEnfrentamiento.Value,Date)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_HoraEnfrentamiento,Byte())
             End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IdClubLocal,Integer)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_IdClubVisitante,Integer)
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_IdEtapa,Integer)
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_IdTorneo,Integer)
-            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_IdFecha,Integer)
+            If (Original_IdEquipoArbitraje.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_IdEquipoArbitraje.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IdEstadio.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_IdEstadio.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CodigoIdentificacion Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_CodigoIdentificacion,String)
+            End If
+            If (Original_IdTipoIdenticacion.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_IdTipoIdenticacion.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_IdClubLocal,Integer)
+            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_IdClubVisitante,Integer)
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_IdEtapa,Integer)
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_IdTorneo,Integer)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_IdFecha,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -23348,7 +23847,11 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     ByVal IdEtapa As Integer,  _
                     ByVal IdTorneo As Integer,  _
                     ByVal IdFecha As Integer,  _
-                    ByVal Original_HoraEnfrentamiento() As Byte,  _
+                    ByVal Original_FechaEnfrentamiento As Global.System.Nullable(Of Date),  _
+                    ByVal Original_IdEquipoArbitraje As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_IdEstadio As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_CodigoIdentificacion As String,  _
+                    ByVal Original_IdTipoIdenticacion As Global.System.Nullable(Of Integer),  _
                     ByVal Original_IdClubLocal As Integer,  _
                     ByVal Original_IdClubVisitante As Integer,  _
                     ByVal Original_IdEtapa As Integer,  _
@@ -23384,18 +23887,46 @@ Namespace LIGA_01_DBDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(IdEtapa,Integer)
             Me.Adapter.UpdateCommand.Parameters(8).Value = CType(IdTorneo,Integer)
             Me.Adapter.UpdateCommand.Parameters(9).Value = CType(IdFecha,Integer)
-            If (Original_HoraEnfrentamiento Is Nothing) Then
+            If (Original_FechaEnfrentamiento.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_FechaEnfrentamiento.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_HoraEnfrentamiento,Byte())
             End If
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_IdClubLocal,Integer)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_IdClubVisitante,Integer)
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_IdEtapa,Integer)
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_IdTorneo,Integer)
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_IdFecha,Integer)
+            If (Original_IdEquipoArbitraje.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_IdEquipoArbitraje.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IdEstadio.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_IdEstadio.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CodigoIdentificacion Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_CodigoIdentificacion,String)
+            End If
+            If (Original_IdTipoIdenticacion.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_IdTipoIdenticacion.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_IdClubLocal,Integer)
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_IdClubVisitante,Integer)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_IdEtapa,Integer)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_IdTorneo,Integer)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_IdFecha,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -23415,8 +23946,8 @@ Namespace LIGA_01_DBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal FechaEnfrentamiento As Global.System.Nullable(Of Date), ByVal IdEquipoArbitraje As Global.System.Nullable(Of Integer), ByVal IdEstadio As Global.System.Nullable(Of Integer), ByVal CodigoIdentificacion As String, ByVal IdTipoIdenticacion As Global.System.Nullable(Of Integer), ByVal Original_HoraEnfrentamiento() As Byte, ByVal Original_IdClubLocal As Integer, ByVal Original_IdClubVisitante As Integer, ByVal Original_IdEtapa As Integer, ByVal Original_IdTorneo As Integer, ByVal Original_IdFecha As Integer) As Integer
-            Return Me.Update(FechaEnfrentamiento, IdEquipoArbitraje, IdEstadio, CodigoIdentificacion, IdTipoIdenticacion, Original_IdClubLocal, Original_IdClubVisitante, Original_IdEtapa, Original_IdTorneo, Original_IdFecha, Original_HoraEnfrentamiento, Original_IdClubLocal, Original_IdClubVisitante, Original_IdEtapa, Original_IdTorneo, Original_IdFecha)
+        Public Overloads Overridable Function Update(ByVal FechaEnfrentamiento As Global.System.Nullable(Of Date), ByVal IdEquipoArbitraje As Global.System.Nullable(Of Integer), ByVal IdEstadio As Global.System.Nullable(Of Integer), ByVal CodigoIdentificacion As String, ByVal IdTipoIdenticacion As Global.System.Nullable(Of Integer), ByVal Original_FechaEnfrentamiento As Global.System.Nullable(Of Date), ByVal Original_IdEquipoArbitraje As Global.System.Nullable(Of Integer), ByVal Original_IdEstadio As Global.System.Nullable(Of Integer), ByVal Original_CodigoIdentificacion As String, ByVal Original_IdTipoIdenticacion As Global.System.Nullable(Of Integer), ByVal Original_IdClubLocal As Integer, ByVal Original_IdClubVisitante As Integer, ByVal Original_IdEtapa As Integer, ByVal Original_IdTorneo As Integer, ByVal Original_IdFecha As Integer) As Integer
+            Return Me.Update(FechaEnfrentamiento, IdEquipoArbitraje, IdEstadio, CodigoIdentificacion, IdTipoIdenticacion, Original_IdClubLocal, Original_IdClubVisitante, Original_IdEtapa, Original_IdTorneo, Original_IdFecha, Original_FechaEnfrentamiento, Original_IdEquipoArbitraje, Original_IdEstadio, Original_CodigoIdentificacion, Original_IdTipoIdenticacion, Original_IdClubLocal, Original_IdClubVisitante, Original_IdEtapa, Original_IdTorneo, Original_IdFecha)
         End Function
     End Class
     
@@ -27024,11 +27555,16 @@ Namespace LIGA_01_DBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT CodigoIdentificacion, IdTipoIdenticacion FROM dbo.IDENTIFICACION"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT * FROM IDENTIFICACION WHERE CodigoIdentificacion = @CodigoIdentificacion"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodigoIdentificacion", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoIdentificacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -27173,6 +27709,37 @@ Namespace LIGA_01_DBDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal Original_CodigoIdentificacion As String, ByVal Original_IdTipoIdenticacion As Integer) As Integer
             Return Me.Update(Original_CodigoIdentificacion, Original_IdTipoIdenticacion, Original_CodigoIdentificacion, Original_IdTipoIdenticacion)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function GetDataByCodigoIdentificacion(ByVal CodigoIdentificacion As String) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (CodigoIdentificacion Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("CodigoIdentificacion")
+            Else
+                command.Parameters(0).Value = CType(CodigoIdentificacion,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
         End Function
     End Class
     
@@ -34132,6 +34699,195 @@ Namespace LIGA_01_DBDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class fn_jugadores_por_nacionalidadTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "fn_jugadores_por_nacionalidad"
+            tableMapping.ColumnMappings.Add("NombreJugador", "NombreJugador")
+            tableMapping.ColumnMappings.Add("ApellidoJugador", "ApellidoJugador")
+            tableMapping.ColumnMappings.Add("FechaNacimiento", "FechaNacimiento")
+            tableMapping.ColumnMappings.Add("CodigoIdentificacion", "CodigoIdentificacion")
+            tableMapping.ColumnMappings.Add("NacionalidadJugador", "NacionalidadJugador")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.WindowsApplication2.My.MySettings.Default.LIGA_01_DBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT NombreJugador, ApellidoJugador, FechaNacimiento, CodigoIdentificacion, Nac"& _ 
+                "ionalidadJugador FROM dbo.fn_jugadores_por_nacionalidad(@NacionalidadJugador)"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NacionalidadJugador", Global.System.Data.SqlDbType.NVarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As LIGA_01_DBDataSet.fn_jugadores_por_nacionalidadDataTable, ByVal NacionalidadJugador As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (NacionalidadJugador Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NacionalidadJugador")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(NacionalidadJugador,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal NacionalidadJugador As String) As LIGA_01_DBDataSet.fn_jugadores_por_nacionalidadDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (NacionalidadJugador Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NacionalidadJugador")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(NacionalidadJugador,String)
+            End If
+            Dim dataTable As LIGA_01_DBDataSet.fn_jugadores_por_nacionalidadDataTable = New LIGA_01_DBDataSet.fn_jugadores_por_nacionalidadDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -35164,6 +35920,51 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._cONTRATOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._eSTADIOTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.ESTADIO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -35182,51 +35983,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._cONTRATOTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._cERTIFICADO_LESIONTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_LESION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -35236,12 +35992,39 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._dETALLE_ENFRENTAMIENTOTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.DETALLE_ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._dETALLE_ENFRENTAMIENTOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -35260,33 +36043,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._e_ARBITRAJE_ARBITROTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -35460,6 +36216,46 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._cONTRATOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._eSTADIOTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.ESTADIO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -35476,46 +36272,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._cONTRATOTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._cERTIFICADO_LESIONTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_LESION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -35524,11 +36280,35 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._dETALLE_ENFRENTAMIENTOTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.DETALLE_ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._dETALLE_ENFRENTAMIENTOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -35548,30 +36328,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             Return result
         End Function
         
@@ -35582,30 +36338,6 @@ Namespace LIGA_01_DBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As LIGA_01_DBDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._e_ARBITRAJE_ARBITROTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.E_ARBITRAJE_ARBITRO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -35622,6 +36354,14 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._dETALLE_SOLICITUDTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DETALLE_SOLICITUD.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._dETALLE_SOLICITUDTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._dETALLE_ENFRENTAMIENTOTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.DETALLE_ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -35630,51 +36370,27 @@ Namespace LIGA_01_DBDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._oPERACION_REPORTE_ADMISIONTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.OPERACION_REPORTE_ADMISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._oPERACION_REPORTE_ADMISIONTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._oPERACION_FICHAPROGRAMACIONTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.OPERACION_FICHAPROGRAMACION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._oPERACION_FICHAPROGRAMACIONTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._cERTIFICADO_LESIONTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_LESION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._cERTIFICADO_LESIONTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._cONTRATOTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -35691,6 +36407,46 @@ Namespace LIGA_01_DBDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._eSTADIOTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._dELEGADO_PARTIDOTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DELEGADO_PARTIDO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._dELEGADO_PARTIDOTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._eNFRENTAMIENTOTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ENFRENTAMIENTO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._eNFRENTAMIENTOTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._fICHA_PROGRAMACIÓNTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FICHA_PROGRAMACIÓN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._fICHA_PROGRAMACIÓNTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._cONTRATOTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CONTRATO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._cONTRATOTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._cERTIFICADO_MEDICOTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CERTIFICADO_MEDICO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._cERTIFICADO_MEDICOTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

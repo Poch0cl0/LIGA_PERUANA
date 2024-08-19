@@ -23,27 +23,28 @@ Partial Class frmArbitro
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArbitro))
         Dim IdTipoIdenticacionLabel As System.Windows.Forms.Label
         Dim CodigoIdentificacionLabel As System.Windows.Forms.Label
         Dim IdTipoArbitroLabel As System.Windows.Forms.Label
         Dim NombreArbitroLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArbitro))
         Me.LIGA_01_DBDataSet = New WindowsApplication2.LIGA_01_DBDataSet()
         Me.ARBITROBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ARBITROTableAdapter = New WindowsApplication2.LIGA_01_DBDataSetTableAdapters.ARBITROTableAdapter()
         Me.TableAdapterManager = New WindowsApplication2.LIGA_01_DBDataSetTableAdapters.TableAdapterManager()
+        Me.IDENTIFICACIONTableAdapter = New WindowsApplication2.LIGA_01_DBDataSetTableAdapters.IDENTIFICACIONTableAdapter()
         Me.ARBITROBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ARBITROBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ARBITRODataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,11 +57,11 @@ Partial Class frmArbitro
         Me.TIPOARBITROBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TIPO_ARBITROTableAdapter = New WindowsApplication2.LIGA_01_DBDataSet1TableAdapters.TIPO_ARBITROTableAdapter()
         Me.IDENTIFICACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IDENTIFICACIONTableAdapter = New WindowsApplication2.LIGA_01_DBDataSetTableAdapters.IDENTIFICACIONTableAdapter()
         Me.IdTipoIdenticacionTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoIdentificacionTextBox = New System.Windows.Forms.TextBox()
         Me.IdTipoArbitroTextBox = New System.Windows.Forms.TextBox()
         Me.NombreArbitroTextBox = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         IdTipoIdenticacionLabel = New System.Windows.Forms.Label()
         CodigoIdentificacionLabel = New System.Windows.Forms.Label()
         IdTipoArbitroLabel = New System.Windows.Forms.Label()
@@ -74,6 +75,42 @@ Partial Class frmArbitro
         CType(Me.TIPOARBITROBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IDENTIFICACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'IdTipoIdenticacionLabel
+        '
+        IdTipoIdenticacionLabel.AutoSize = True
+        IdTipoIdenticacionLabel.Location = New System.Drawing.Point(142, 205)
+        IdTipoIdenticacionLabel.Name = "IdTipoIdenticacionLabel"
+        IdTipoIdenticacionLabel.Size = New System.Drawing.Size(104, 13)
+        IdTipoIdenticacionLabel.TabIndex = 20
+        IdTipoIdenticacionLabel.Text = "Id Tipo Identicacion:"
+        '
+        'CodigoIdentificacionLabel
+        '
+        CodigoIdentificacionLabel.AutoSize = True
+        CodigoIdentificacionLabel.Location = New System.Drawing.Point(142, 179)
+        CodigoIdentificacionLabel.Name = "CodigoIdentificacionLabel"
+        CodigoIdentificacionLabel.Size = New System.Drawing.Size(109, 13)
+        CodigoIdentificacionLabel.TabIndex = 18
+        CodigoIdentificacionLabel.Text = "Codigo Identificacion:"
+        '
+        'IdTipoArbitroLabel
+        '
+        IdTipoArbitroLabel.AutoSize = True
+        IdTipoArbitroLabel.Location = New System.Drawing.Point(142, 153)
+        IdTipoArbitroLabel.Name = "IdTipoArbitroLabel"
+        IdTipoArbitroLabel.Size = New System.Drawing.Size(76, 13)
+        IdTipoArbitroLabel.TabIndex = 16
+        IdTipoArbitroLabel.Text = "Id Tipo Arbitro:"
+        '
+        'NombreArbitroLabel
+        '
+        NombreArbitroLabel.AutoSize = True
+        NombreArbitroLabel.Location = New System.Drawing.Point(142, 127)
+        NombreArbitroLabel.Name = "NombreArbitroLabel"
+        NombreArbitroLabel.Size = New System.Drawing.Size(80, 13)
+        NombreArbitroLabel.TabIndex = 14
+        NombreArbitroLabel.Text = "Nombre Arbitro:"
         '
         'LIGA_01_DBDataSet
         '
@@ -128,6 +165,10 @@ Partial Class frmArbitro
         Me.TableAdapterManager.UpdateOrder = WindowsApplication2.LIGA_01_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.USUARIOTableAdapter = Nothing
         '
+        'IDENTIFICACIONTableAdapter
+        '
+        Me.IDENTIFICACIONTableAdapter.ClearBeforeFill = True
+        '
         'ARBITROBindingNavigator
         '
         Me.ARBITROBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
@@ -145,6 +186,31 @@ Partial Class frmArbitro
         Me.ARBITROBindingNavigator.Size = New System.Drawing.Size(862, 25)
         Me.ARBITROBindingNavigator.TabIndex = 0
         Me.ARBITROBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -178,16 +244,9 @@ Partial Class frmArbitro
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -210,26 +269,8 @@ Partial Class frmArbitro
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'ARBITROBindingNavigatorSaveItem
         '
@@ -310,10 +351,6 @@ Partial Class frmArbitro
         Me.IDENTIFICACIONBindingSource.DataMember = "IDENTIFICACION"
         Me.IDENTIFICACIONBindingSource.DataSource = Me.LIGA_01_DBDataSet
         '
-        'IDENTIFICACIONTableAdapter
-        '
-        Me.IDENTIFICACIONTableAdapter.ClearBeforeFill = True
-        '
         'IdTipoIdenticacionTextBox
         '
         Me.IdTipoIdenticacionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ARBITROBindingSource, "IdTipoIdenticacion", True))
@@ -321,15 +358,6 @@ Partial Class frmArbitro
         Me.IdTipoIdenticacionTextBox.Name = "IdTipoIdenticacionTextBox"
         Me.IdTipoIdenticacionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.IdTipoIdenticacionTextBox.TabIndex = 21
-        '
-        'IdTipoIdenticacionLabel
-        '
-        IdTipoIdenticacionLabel.AutoSize = True
-        IdTipoIdenticacionLabel.Location = New System.Drawing.Point(142, 205)
-        IdTipoIdenticacionLabel.Name = "IdTipoIdenticacionLabel"
-        IdTipoIdenticacionLabel.Size = New System.Drawing.Size(104, 13)
-        IdTipoIdenticacionLabel.TabIndex = 20
-        IdTipoIdenticacionLabel.Text = "Id Tipo Identicacion:"
         '
         'CodigoIdentificacionTextBox
         '
@@ -339,15 +367,6 @@ Partial Class frmArbitro
         Me.CodigoIdentificacionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.CodigoIdentificacionTextBox.TabIndex = 19
         '
-        'CodigoIdentificacionLabel
-        '
-        CodigoIdentificacionLabel.AutoSize = True
-        CodigoIdentificacionLabel.Location = New System.Drawing.Point(142, 179)
-        CodigoIdentificacionLabel.Name = "CodigoIdentificacionLabel"
-        CodigoIdentificacionLabel.Size = New System.Drawing.Size(109, 13)
-        CodigoIdentificacionLabel.TabIndex = 18
-        CodigoIdentificacionLabel.Text = "Codigo Identificacion:"
-        '
         'IdTipoArbitroTextBox
         '
         Me.IdTipoArbitroTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ARBITROBindingSource, "IdTipoArbitro", True))
@@ -355,15 +374,7 @@ Partial Class frmArbitro
         Me.IdTipoArbitroTextBox.Name = "IdTipoArbitroTextBox"
         Me.IdTipoArbitroTextBox.Size = New System.Drawing.Size(100, 20)
         Me.IdTipoArbitroTextBox.TabIndex = 17
-        '
-        'IdTipoArbitroLabel
-        '
-        IdTipoArbitroLabel.AutoSize = True
-        IdTipoArbitroLabel.Location = New System.Drawing.Point(142, 153)
-        IdTipoArbitroLabel.Name = "IdTipoArbitroLabel"
-        IdTipoArbitroLabel.Size = New System.Drawing.Size(76, 13)
-        IdTipoArbitroLabel.TabIndex = 16
-        IdTipoArbitroLabel.Text = "Id Tipo Arbitro:"
+        Me.IdTipoArbitroTextBox.Visible = False
         '
         'NombreArbitroTextBox
         '
@@ -373,20 +384,25 @@ Partial Class frmArbitro
         Me.NombreArbitroTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NombreArbitroTextBox.TabIndex = 15
         '
-        'NombreArbitroLabel
+        'ComboBox1
         '
-        NombreArbitroLabel.AutoSize = True
-        NombreArbitroLabel.Location = New System.Drawing.Point(142, 127)
-        NombreArbitroLabel.Name = "NombreArbitroLabel"
-        NombreArbitroLabel.Size = New System.Drawing.Size(80, 13)
-        NombreArbitroLabel.TabIndex = 14
-        NombreArbitroLabel.Text = "Nombre Arbitro:"
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ARBITROBindingSource, "IdTipoArbitro", True))
+        Me.ComboBox1.DataSource = Me.TIPOARBITROBindingSource
+        Me.ComboBox1.DisplayMember = "NombreTipo"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(257, 150)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 22
+        Me.ComboBox1.ValueMember = "IdTipoArbitro"
         '
         'frmArbitro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(862, 504)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(NombreArbitroLabel)
         Me.Controls.Add(Me.NombreArbitroTextBox)
         Me.Controls.Add(IdTipoArbitroLabel)
@@ -447,4 +463,5 @@ Partial Class frmArbitro
     Friend WithEvents CodigoIdentificacionTextBox As TextBox
     Friend WithEvents IdTipoArbitroTextBox As TextBox
     Friend WithEvents NombreArbitroTextBox As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

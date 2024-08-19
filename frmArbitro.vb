@@ -35,4 +35,10 @@
     Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
 
     End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged_2(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.SelectedValue IsNot Nothing Then
+            IdTipoArbitroTextBox.Text = ComboBox1.SelectedValue.ToString()
+        End If
+    End Sub
 End Class
